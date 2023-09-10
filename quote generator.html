@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .quote-container {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #generateButton {
+      margin-top: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #generateButton:hover {
+      background-color: #2980b9;
+    }
+
+    select {
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quote&nbsp; Generator</h1>
+    <select id="quoteType">
+      <option value="action">Action</option>
+      <option value="alone">Alone</option>
+      <option value="time">Time</option>
+      <option value="technology">Technology</option>
+    </select>
+    <button id="generateButton">Generate Quote</button>
+    <div class="quote-container">
+      <p id="quoteText">Select a category and click "Generate Quote" to get started!</p>
+    </diva
+  </div>
+  <script>
+    const quotes = {
+      action: [
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "Action is the foundational key to all success. - Pablo Picasso",
+"The only way to do great work is to love what you do. - Steve Jobs",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "Action is the foundational key to all success. - Pablo Picasso",
+  "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+  "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+  "Take the first step in faith. You don't have to see the whole staircase, just take the first step. - Martin Luther King Jr.",
+      ],
+      alone: [
+        "The greatest thing in the world is to know how to belong to oneself. - Michel de Montaigne",
+        "I restore myself when I'm alone. - Marilyn Monroe",
+        "The eternal quest of the human being is to shatter his loneliness. - Norman Cousins",
+"The greatest thing in the world is to know how to belong to oneself. - Michel de Montaigne",
+  "I restore myself when I'm alone. - Marilyn Monroe",
+  "The eternal quest of the human being is to shatter his loneliness. - Norman Cousins",
+  "Loneliness and the feeling of being unwanted is the most terrible poverty. - Mother Teresa",
+  "The only time we waste is the time we spend thinking we are alone. - Mitch Albom",
+  "It's easy to stand with the crowd. It takes courage to stand alone. - Mahatma Gandhi",
+      ],
+      time: [
+        "The two most powerful warriors are patience and time. - Leo Tolstoy",
+        "Time flies over us, but leaves its shadow behind. - Nathaniel Hawthorne",
+        "Time you enjoy wasting is not wasted time. - Marthe Troly-Curtin",
+"The two most powerful warriors are patience and time. - Leo Tolstoy",
+  "Time flies over us, but leaves its shadow behind. - Nathaniel Hawthorne",
+  "Time you enjoy wasting is not wasted time. - Marthe Troly-Curtin",
+  "Time is what we want most, but what we use worst. - William Penn",
+  "They always say time changes things, but you actually have to change them yourself. - Andy Warhol",
+  "Time is a created thing. To say 'I don't have time,' is like saying, 'I don't want to.' - Lao Tzu",
+      ],
+      technology: [
+        "Technology is a useful servant but a dangerous master. - Christian Lous Lange",
+        "The great myth of our times is that technology is communication. - Libby Larsen",
+        "The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life. - Bill Gates",
+"Technology is a useful servant but a dangerous master. - Christian Lous Lange",
+  "The great myth of our times is that technology is communication. - Libby Larsen",
+  "The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life. - Bill Gates",
+  "The real danger is not that computers will begin to think like men, but that men will begin to think like computers. - Sydney J. Harris",
+  "It has become appallingly obvious that our technology has exceeded our humanity. - Albert Einstein",
+  "The human spirit must prevail over technology. - Albert Einstein",
+      ],
+    };
+
+    const quoteTypeSelector = document.getElementById("quoteType");
+    const generateButton = document.getElementById("generateButton");
+    const quoteText = document.getElementById("quoteText");
+
+    generateButton.addEventListener("click", () => {
+      const selectedQuoteType = quoteTypeSelector.value;
+      const quotesOfType = quotes[selectedQuoteType];
+      
+      if (quotesOfType) {
+        const randomIndex = Math.floor(Math.random() * quotesOfType.length);
+        quoteText.textContent = quotesOfType[randomIndex];
+      }
+    });
+  </script>
+</body>
+</html>\
